@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Models\User;
+
 class UsersController
 {
     /**
@@ -9,9 +11,9 @@ class UsersController
      *
      * @return string
      */
-    public function index() : string
+    public function index() : array
     {
-        return 'index';
+        return User::all()->toArray();
     }
 
     /**

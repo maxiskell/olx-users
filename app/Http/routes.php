@@ -5,7 +5,5 @@
  */
 
 return [
-    ['GET', '/users', function () {
-        return 'hello, users!';
-    }]
+    ['GET', '/users', ['App\Controllers\UsersController', 'index']]
 ];
