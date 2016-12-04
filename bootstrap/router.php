@@ -3,7 +3,7 @@
 /**
  * Router definition.
  *
- * Captures all the defined routes in a route collector and returns it.
+ * Capture all the defined routes in a route collector and return it.
  */
 
 $router = new \Phroute\Phroute\RouteCollector();
