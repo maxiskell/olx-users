@@ -22,9 +22,9 @@ class UsersController
      * @param  int
      * @return string
      */
-    public function show(int $id) : string
+    public function show(int $id) : array
     {
-        return 'show';
+        return User::findOrFail($id)->toArray();
     }
 
     /**
