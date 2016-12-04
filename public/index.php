@@ -1,6 +1,7 @@
 <?php
 
 require __DIR__ . '/../bootstrap/autoload.php';
+require __DIR__ . '/../bootstrap/database.php';
 
 $app = require __DIR__ . '/../bootstrap/app.php';
 

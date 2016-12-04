@@ -1,0 +1,10 @@
+{
+  "driver": "msyql",
+  "host": "127.0.0.1:3900",
+  "database": "olx",
+  "username": "route",
+  "password": "route",
+  "charset": "utf8",
+  "collation": "utf8_unicode_ci",
+  "prefix": ""
+}
