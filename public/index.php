@@ -10,8 +10,13 @@ require __DIR__ . '/../bootstrap/database.php';
 $app = require __DIR__ . '/../bootstrap/app.php';
 
 try {
-    $response = $app->dispatch($_SERVER['REQUEST_METHOD'], parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
-    $code = ResponseCodes::HTTP_OK;
+    $response = $app->dispatch(
+        $_SERVER['REQUEST_METHOD'],
+        parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)
+    );
+
+    $code = (is_array($response) && array_key_exists('status', $response)) ?
+        $response['status'] : ResponseCodes::HTTP_OK;
 } catch (\Phroute\Phroute\Exception\HttpRouteNotFoundException $e) {
     $code = ResponseCodes::HTTP_NOT_FOUND;
     $response = '404 - Not Found';

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "643240c28143c56ec270ca6f817e2cc8",
-    "content-hash": "e0d06bf25151d96a54ed7f9e5d2ea2aa",
+    "hash": "6cb76bc46c19068d6da3a62162d863f5",
+    "content-hash": "0555efbfcb45b09c6bd73391153e6e4b",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -538,6 +538,45 @@
                 "ioc"
             ],
             "time": "2016-03-14 20:10:19"
+        },
+        {
+            "name": "rlanvin/php-form",
+            "version": "v2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rlanvin/php-form.git",
+                "reference": "d68c4fe9cc2e9191175169409d718a59ea1bff55"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rlanvin/php-form/zipball/d68c4fe9cc2e9191175169409d718a59ea1bff55",
+                "reference": "d68c4fe9cc2e9191175169409d718a59ea1bff55",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "php": ">=5.4.0"
+            },
+            "suggest": {
+                "ext-intl": "Intl extension is useful for validating formatted numbers"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Form\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Lightweight form validation library for PHP",
+            "homepage": "https://github.com/rlanvin/php-form",
+            "keywords": [
+                "form",
+                "validation"
+            ],
+            "time": "2016-04-11 09:58:23"
         },
         {
             "name": "symfony/polyfill-mbstring",

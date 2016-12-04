@@ -3,6 +3,9 @@
 namespace App\Controllers;
 
 use App\Models\User;
+use App\Http\Request;
+use App\Http\ResponseCodes;
+use Form\Validator;
 
 class UsersController
 {
@@ -20,7 +23,7 @@ class UsersController
      * Retrieve a specific user.
      *
      * @param  int
-     * @return string
+     * @return array
      */
     public function show(int $id) : array
     {
@@ -30,11 +33,24 @@ class UsersController
     /**
      * Create a user entity.
      *
-     * @return string
+     * @return array
      */
-    public function create() : string
+    public function create() : array
     {
-        return 'create';
+        $input = (new Request)->input();
+        $validator = new Validator(User::validationRules());
+
+        if ($validator->validate($input)) {
+            return [
+                'status' => ResponseCodes::HTTP_CREATED,
+                'data' => User::create($input)
+            ];
+        } else {
+            return [
+                'status' => ResponseCodes::HTTP_BAD_REQUEST,
+                'errors' => $validator->getErrors()
+            ];
+        }
     }
 
     /**
