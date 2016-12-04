@@ -21,7 +21,10 @@ try {
 } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
     $code = ResponseCodes::HTTP_NOT_FOUND;
     $response = '404 - Not Found';
-} catch (Exception $e) {
+} catch (\Exception $e) {
+    $code = ResponseCodes::HTTP_INTERNAL_SERVER_ERROR;
+    $response = '500 - Internal Server Error';
+} catch (\Error $e) {
     $code = ResponseCodes::HTTP_INTERNAL_SERVER_ERROR;
     $response = '500 - Internal Server Error';
 }
