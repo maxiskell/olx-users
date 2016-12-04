@@ -1,0 +1,21 @@
+{
+    "name": "olx/users",
+    "description": "Users API",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Maximiliano L. Schell",
+            "email": "maxilschell@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0.0",
+        "phroute/phroute": "^2.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    }
+}
