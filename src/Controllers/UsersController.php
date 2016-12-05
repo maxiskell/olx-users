@@ -5,6 +5,7 @@ namespace UsersApi\Controllers;
 use UsersApi\Models\User;
 use UsersApi\Http\Request;
 use UsersApi\Http\ResponseCodes;
+use UsersApi\Helpers\ImageUploader;
 use Form\Validator;
 
 class UsersController
@@ -90,5 +91,34 @@ class UsersController
         User::findOrFail($id)->delete();
 
         return ['data' => 'The user has been successfully deleted'];
+    }
+
+    /**
+     * Upload and set a user's picture.
+     *
+     * @param  int
+     * @return array
+     */
+    public function uploadPicture(int $id) : array
+    {
+        $user = User::findOrFail($id);
+        $input = (new Request)->input();
+        $uploader = new ImageUploader();
+        $imageData = $uploader->upload($input['filepath']);
+
+        if (is_null($imageData)) {
+            return [
+                'status' => ResponseCodes::HTTP_BAD_REQUEST,
+                'errors' => 'Invalid image file'
+            ];
+        }
+
+        $user->update(['picture' => $imageData->url]);
+
+        return [
+            'data' => [
+                'image_url' => $imageData->url
+            ]
+        ];
     }
 }

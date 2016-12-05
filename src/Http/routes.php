@@ -9,5 +9,6 @@ return [
     ['POST', '/users', ['UsersApi\Controllers\UsersController', 'create']],
     ['GET', '/users/{id:i}', ['UsersApi\Controllers\UsersController', 'show']],
     ['PATCH', '/users/{id:i}', ['UsersApi\Controllers\UsersController', 'update']],
-    ['DELETE', '/users/{id:i}', ['UsersApi\Controllers\UsersController', 'destroy']]
+    ['DELETE', '/users/{id:i}', ['UsersApi\Controllers\UsersController', 'destroy']],
+    ['POST', '/users/{id:i}/picture', ['UsersApi\Controllers\UsersController', 'uploadPicture']]
 ];

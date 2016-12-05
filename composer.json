@@ -14,7 +14,8 @@
         "phroute/phroute": "^2.1",
         "hassankhan/config": "^0.10.0",
         "illuminate/database": "^5.3",
-        "rlanvin/php-form": "^2.0"
+        "rlanvin/php-form": "^2.0",
+        "guzzlehttp/guzzle": "^6.2"
     },
     "autoload": {
         "psr-4": {
