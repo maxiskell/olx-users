@@ -63,7 +63,7 @@ class UsersController
     public function update(int $id) : array
     {
         $input = (new Request)->input();
-        $validator = new Validator(User::validationRules());
+        $validator = new Validator(User::validationRules(true));
 
         if ($validator->validate($input)) {
             $user = User::findOrFail($id);
