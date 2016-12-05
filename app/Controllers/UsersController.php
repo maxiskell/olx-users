@@ -83,10 +83,12 @@ class UsersController
      * Delete a user entity.
      *
      * @param  int
-     * @return string
+     * @return array
      */
-    public function destroy(int $id) : string
+    public function destroy(int $id) : array
     {
-        return 'create';
+        User::findOrFail($id)->delete();
+
+        return ['data' => 'The user has been successfully deleted'];
     }
 }
