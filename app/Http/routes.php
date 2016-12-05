@@ -6,6 +6,7 @@
 
 return [
     ['GET', '/users', ['App\Controllers\UsersController', 'index']],
+    ['POST', '/users', ['App\Controllers\UsersController', 'create']],
     ['GET', '/users/{id:i}', ['App\Controllers\UsersController', 'show']],
-    ['POST', '/users', ['App\Controllers\UsersController', 'create']]
+    ['PATCH', '/users/{id:i}', ['App\Controllers\UsersController', 'update']]
 ];

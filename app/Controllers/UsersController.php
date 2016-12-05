@@ -16,7 +16,7 @@ class UsersController
      */
     public function index() : array
     {
-        return User::all()->toArray();
+        return ['data' => User::all()->toArray()];
     }
 
     /**
@@ -27,7 +27,7 @@ class UsersController
      */
     public function show(int $id) : array
     {
-        return User::findOrFail($id)->toArray();
+        return ['data' => User::findOrFail($id)->toArray()];
     }
 
     /**
@@ -57,10 +57,25 @@ class UsersController
      * Update a user entity.
      *
      * @param  int
-     * @return string
+     * @return array
      */
-    public function update(int $id) : string
+    public function update(int $id) : array
     {
+        $input = (new Request)->input();
+        $validator = new Validator(User::validationRules());
+
+        if ($validator->validate($input)) {
+            $user = User::findOrFail($id);
+            $user->update($input);
+
+            return ['data' => $user->toArray()];
+        } else {
+            return [
+                'status' => ResponseCodes::HTTP_BAD_REQUEST,
+                'errors' => $validator->getErrors()
+            ];
+        }
+
         return 'create';
     }
 
