@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Controllers;
+namespace UsersApi\Controllers;
 
-use App\Models\User;
-use App\Http\Request;
-use App\Http\ResponseCodes;
+use UsersApi\Models\User;
+use UsersApi\Http\Request;
+use UsersApi\Http\ResponseCodes;
 use Form\Validator;
 
 class UsersController

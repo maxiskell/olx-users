@@ -5,9 +5,9 @@
  */
 
 return [
-    ['GET', '/users', ['App\Controllers\UsersController', 'index']],
-    ['POST', '/users', ['App\Controllers\UsersController', 'create']],
-    ['GET', '/users/{id:i}', ['App\Controllers\UsersController', 'show']],
-    ['PATCH', '/users/{id:i}', ['App\Controllers\UsersController', 'update']],
-    ['DELETE', '/users/{id:i}', ['App\Controllers\UsersController', 'destroy']]
+    ['GET', '/users', ['UsersApi\Controllers\UsersController', 'index']],
+    ['POST', '/users', ['UsersApi\Controllers\UsersController', 'create']],
+    ['GET', '/users/{id:i}', ['UsersApi\Controllers\UsersController', 'show']],
+    ['PATCH', '/users/{id:i}', ['UsersApi\Controllers\UsersController', 'update']],
+    ['DELETE', '/users/{id:i}', ['UsersApi\Controllers\UsersController', 'destroy']]
 ];

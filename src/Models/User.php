@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace UsersApi\Models;
 
 class User extends \Illuminate\Database\Eloquent\Model
 {

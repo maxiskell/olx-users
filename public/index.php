@@ -1,8 +1,8 @@
 <?php
 
-namespace App;
+namespace UsersApi;
 
-use App\Http\ResponseCodes;
+use UsersApi\Http\ResponseCodes;
 
 require __DIR__ . '/../bootstrap/autoload.php';
 require __DIR__ . '/../bootstrap/database.php';
