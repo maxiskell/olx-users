@@ -23,13 +23,13 @@ Run the schema script to create the users table
 _(remember to first configure your mysql credentials and database name at ./config/database.json)_
 
 ```
-$ mysql -u{your_username} -p < database/schema.sql
+$ mysql -u{your_username} -p olx < database/schema.sql
 ```
 
 For testing purposes, you can also seed the database
 
 ```
-$ mysql -u{your_username} -p < database/seeder.sql
+$ mysql -u{your_username} -p olx < database/seeder.sql
 ```
 
 ## Run the application
