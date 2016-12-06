@@ -33,7 +33,7 @@ try {
     ];
 } catch (\Phroute\Phroute\Exception\HttpMethodNotAllowedException $e) {
     $response = [
-        'status' => ResponseCodes::HTTP_NOT_FOUND,
+        'status' => ResponseCodes::HTTP_METHOD_NOT_ALLOWED,
         'errors' => '405 - Method Not Allowed'
     ];
 } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
