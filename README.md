@@ -10,7 +10,7 @@
 Clone the project
 
 ```
-$ git clone ...
+$ git clone https://bitbucket.org/maxiskell/olx-users
 ```
 
 Install dependencies
