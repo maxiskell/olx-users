@@ -35,13 +35,15 @@ $ mysql -u{your_username} -p < database/seeder.sql
 ## Run the application
 
 Unfortunately, due to the lack of time and docker not working properly on my machine,
-I could not test a container-based environment, so, let's just recurr to a plain old php server
+I could not test a container-based environment, so, let's just recur to a plain old php server :)
 
 ```
 $ php -S localhost:3000 -t public/
 ```
 
 Have fun! :)
+
+---
 
 ## About the implementation
 
@@ -51,6 +53,14 @@ appropriate Response class instead of returning arrays. But, again, due to the l
 keep things simple and as understandable as possible, focusing on the core functionallity of the excercise
 given and not on creating a big full-blown framework, with a migrations system, IoC Container, services,
 repositories and things like that.
+
+---
+
+## Logging
+
+All PHP errors and thrown exceptions are catched and properly logged in _logs/users.log_.
+
+---
 
 ## Endpoints
 
@@ -137,8 +147,8 @@ Create a new user entity.
 
 Parameter | Description | Optional
 --- | --- | ---
-*name* | The name of the new user | NO
-*address* | The address of the new user | YES
+name | _The name of the new user_ | NO
+address | _The address of the new user_ | YES
 
 Example: `{base_url}/users {"name":"Jonathan Richman", "address":"345 Some Fancy Street"}`
 
@@ -182,8 +192,8 @@ Update a user entity data.
 
 Parameter | Description | Optional
 --- | --- | ---
-*name* | The name of the new user | YES
-*address* | The address of the new user | YES
+name | _The name of the new user_ | YES
+address | _The address of the new user_ | YES
 
 Example: `{base_url}/users/1 {"name":"Fred Flinstone"}`
 
@@ -262,7 +272,7 @@ Example: `{base_url}/users/1/picture`
 
 Parameter | Description | Optional
 --- | --- | ---
-*filepath* | Full local path for the uploaded images | NO
+filepath | _Full local path for the uploaded images_ | NO
 
 Response:
 

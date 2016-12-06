@@ -9,6 +9,8 @@ require __DIR__ . '/../bootstrap/database.php';
 
 $app = require __DIR__ . '/../bootstrap/app.php';
 
+$logfile = __DIR__ . '/../logs/users.log';
+
 try {
     $dispatched = $app->dispatch(
         $_SERVER['REQUEST_METHOD'],
@@ -42,11 +44,15 @@ try {
         'errors' => '404 - Resource Not Found'
     ];
 } catch (\Exception $e) {
+    error_log('['.date('Y-m-d@H:i:s').']->'.$e->getMessage(), 3, $logfile);
+
     $response = [
         'status' => ResponseCodes::HTTP_INTERNAL_SERVER_ERROR,
         'errors' => '500 - Internal Server Error'
     ];
 } catch (\Error $e) {
+    error_log('['.date('Y-m-d@H:i:s').']->'.$e->getMessage(), 3, $logfile);
+
     $response = [
         'status' => ResponseCodes::HTTP_INTERNAL_SERVER_ERROR,
         'errors' => '500 - Internal Server Error'
