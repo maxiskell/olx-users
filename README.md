@@ -54,6 +54,10 @@ keep things simple and as understandable as possible, focusing on the core funct
 given and not on creating a big full-blown framework, with a migrations system, IoC Container, services,
 repositories and things like that.
 
+### Coding standard:
+
+PSR-2
+
 ---
 
 ## Logging
